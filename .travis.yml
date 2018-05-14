@@ -22,6 +22,7 @@ matrix:
       apt:
         sources: ['ubuntu-toolchain-r-test']
         packages: ['g++-5','lcov']
+        update: true
 
   - os: linux
     env: COMPILER=g++-6
@@ -29,6 +30,7 @@ matrix:
       apt:
         sources: ['ubuntu-toolchain-r-test']
         packages: ['g++-6','lcov']
+        update: true
 
   - os: linux
     env: COMPILER=g++-7
@@ -36,6 +38,7 @@ matrix:
       apt:
         sources: ['ubuntu-toolchain-r-test']
         packages: ['g++-7','lcov']
+        update: true
 
   - os: linux
     env: COMPILER=clang++-5.0
@@ -43,6 +46,7 @@ matrix:
       apt:
         sources: ['ubuntu-toolchain-r-test','llvm-toolchain-trusty-5.0']
         packages: ['clang-5.0','lcov','g++-6']        
+        update: true
 
   - os: linux
     env: COMPILER=clang++-4.0
@@ -50,6 +54,7 @@ matrix:
       apt:
         sources: ['ubuntu-toolchain-r-test','llvm-toolchain-trusty-4.0']
         packages: ['clang-4.0','lcov','g++-6']        
+        update: true
 
 script:
   - CXX=${COMPILER}
