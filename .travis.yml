@@ -1,0 +1,64 @@
+dist: trusty
+sudo: false
+language: cpp
+
+matrix:
+  include:
+  - os: osx
+    osx_image: xcode6.4
+
+  - os: osx
+    osx_image: xcode7.3
+
+  - os: osx
+    osx_image: xcode8.3
+
+  - os: osx
+    osx_image: xcode9.2
+
+  - os: linux
+    env: COMPILER=g++-5
+    addons:
+      apt:
+        sources: ['ubuntu-toolchain-r-test']
+        packages: ['g++-5','lcov']
+
+  - os: linux
+    env: COMPILER=g++-6
+    addons:
+      apt:
+        sources: ['ubuntu-toolchain-r-test']
+        packages: ['g++-6','lcov']
+
+  - os: linux
+    env: COMPILER=g++-7
+    addons:
+      apt:
+        sources: ['ubuntu-toolchain-r-test']
+        packages: ['g++-7','lcov']
+
+  - os: linux
+    env: COMPILER=clang++-5.0
+    addons:
+      apt:
+        sources: ['ubuntu-toolchain-r-test','llvm-toolchain-trusty-5.0']
+        packages: ['clang-5.0','lcov','g++-6']        
+
+  - os: linux
+    env: COMPILER=clang++-4.0
+    addons:
+      apt:
+        sources: ['ubuntu-toolchain-r-test','llvm-toolchain-trusty-4.0']
+        packages: ['clang-4.0','lcov','g++-6']        
+
+script:
+  - CXX=${COMPILER}
+  - ./gocoverage.sh
+  - if [ "$TRAVIS_OS_NAME" == "linux" ] && [ "$COMPILER" == "g++-7" ]; then
+      cd ${TRAVIS_BUILD_DIR};
+      lcov --directory . --capture --output-file coverage.info; 
+      lcov --remove coverage.info '/usr/*' 'ext/*' 'test/*' 'tests/*' --output-file coverage.info; 
+      lcov --list coverage.info; 
+      bash <(curl -s https://codecov.io/bash) -t 1b08bd09-8cd4-432b-b139-76c6866c070f;
+      echo "Codecov - Done";
+    fi
