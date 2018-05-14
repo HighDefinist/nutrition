@@ -58,6 +58,7 @@ matrix:
 
 script:
   - CXX=${COMPILER}
+  - chmod +x ./gocoverage.sh
   - ./gocoverage.sh
   - if [ "$TRAVIS_OS_NAME" == "linux" ] && [ "$COMPILER" == "g++-7" ]; then
       cd ${TRAVIS_BUILD_DIR};
