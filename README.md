@@ -4,7 +4,7 @@
 ### Requirements
  
 - C++11
-- [CMake](https://cmake.org/) (only necessary for building the example)
+- [CMake](https://cmake.org/)
 
 ### Installation
 
