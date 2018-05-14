@@ -2,7 +2,7 @@
 **A starting point for a project**
 
 ### Requirements
-
+ 
 - C++11
 - [CMake](https://cmake.org/) (only necessary for building the example)
 
