@@ -36,3 +36,4 @@ You can download the latest version of *templateproject* by cloning the GitHub r
 
 * Download projecttemplate
 * Remove .git directory
+* Rename all project name references from 
