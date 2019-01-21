@@ -38,21 +38,21 @@ How to initialize the project:
 
 * Download projecttemplate
 * Remove .git directory
-* *Optional: Rename project name in CMakeLists.txt to your own name <projectname>*
-* Go to your GitHub account name <username> and create a repository named <projectname>
+* *Optional: Rename project name in CMakeLists.txt to your own name $projectname$*
+* Go to your GitHub account name $username$ and create a repository named $projectname$
 * Open Git Bash in the project directory, and enter the following commands:
   * git init
   * git add .
   * git commit -m "Initial commit"
-  * git remote add origin https://github.com/<username>/<projectname>.git
+  * git remote add origin https://github.com/$username$/$projectname$.git
   * git push -u origin master
 
 How to setup the project:
 * Replace the contents of include/ and ext/ with whatever includes you need *(Note: these two folders are functionally identical, but generally include/ should contain your own files, and ext/ should contain external header-only libraries*
-* To setup a source executable named <exename>:
+* To setup a source executable named $exename$:
   * In src/CMakeLists.txt , modify SOURCE_LIST so that it contains <exename>
-  * Create a folder named src/<exename>
-  * Create a file named src/<exename>/<exename>.cpp (this is the main.cpp for the executable <exename>)
+  * Create a folder named src/$exename$
+  * Create a file named src/$exename$/$exename$.cpp (this is the main.cpp for the executable <exename>)
 * To test your source files using Catch (only files in include/ can be tested):
   * Edit test/main.cpp accordingly
   
