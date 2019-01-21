@@ -53,7 +53,7 @@ How to setup the project:
   * In src/CMakeLists.txt , modify SOURCE_LIST so that it contains $exename$
   * Create a folder named src/$exename$
   * Create a file named src/$exename$/$exename$.cpp (this is the main.cpp for the executable <exename>)
-* To test your source files using Catch (only files in include/ can be tested - also this feature is not complete at this time):
+* To test your source files using Catch (only files in include/ can be tested):
   * Edit test/main.cpp accordingly
 * To disable tests, remove add_subdirectory(test) in CMakeLists.txt 
   
