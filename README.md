@@ -33,3 +33,8 @@ You can download the latest version of *templateproject* by cloning the GitHub r
 	git clone https://github.com/HighDefinist/templateproject.git
 	
 ### Usage
+
+Markup : * Bullet list
+              * Nested bullet
+                  * Sub-nested bullet etc
+          * Bullet list item 2
