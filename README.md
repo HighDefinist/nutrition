@@ -48,7 +48,7 @@ How to initialize the project:
   * git push -u origin master
 
 How to setup the project:
-* Replace the contents of include/ and ext/ with whatever includes you need *(Note: these two folders are functionally identical, but generally include/ should contain your own files, and ext/ should contain external header-only libraries*
+* Replace the contents of include/ and ext/ with whatever includes you need *(Note: these two folders are functionally identical, but generally include/ should contain your own files, and ext/ should contain external header-only libraries)*
 * To setup a source executable named $exename$:
   * In src/CMakeLists.txt , modify SOURCE_LIST so that it contains <exename>
   * Create a folder named src/$exename$
