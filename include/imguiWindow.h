@@ -8,7 +8,7 @@ public:
   };
 
   // Should be called once at the beginning of every frame. Creates a window titled WindowName at the location (x,y), with width xSz and height ySz.
-  virtual bool Init(std::string WindowName, float Scale, int x, int y, int xSz, int ySz) = 0;
+  virtual bool Init(std::string WindowName, int x, int y, int xSz, int ySz) = 0;
 
   // Should be called once, at the beginning of a frame, to process any basic window messages such as resizing or closing the window. When the window is closed, this function returns TRUE, otherwise FALSE. WaitForEvent=true means that the function waits until the user performs an action in the window. Otherwise it returns immediately.
   virtual bool ProcessMessagesAndCheckIfQuit(bool WaitForEvent) = 0;

@@ -265,7 +265,7 @@ void MakeFood() {
 void MainWindow() {
   yprintf("Opening window...\n");
   TImGuiWindowDX11 ImDx;
-  ImDx.Init("nutrition", 1.5f, 100, 50, 1601, 800);
+  ImDx.Init("nutrition", 100, 50, 1401, 800);
   while (!ImDx.ProcessMessagesAndCheckIfQuit(false)) {
     ImDx.NewFrame();
 

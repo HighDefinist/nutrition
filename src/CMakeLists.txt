@@ -27,6 +27,7 @@ set (DX11_LINKS
   d3dcompiler.lib
   dxgi.lib
   imm32.lib  
+  Shcore.lib
 )
 
 foreach (subproject downloader)
@@ -36,6 +37,9 @@ endforeach()
 
 foreach (subproject default)
   add_executable(${subproject} ${subproject}/${subproject}.cpp ${IMGUI_SOURCE} ${ZSTD_SOURCE})
-  target_compile_features(${subproject} INTERFACE cxx_std_11)
+  target_compile_features(${subproject} INTERFACE cxx_std_17)
 endforeach() 
 target_link_libraries(default ${DX11_LINKS})
+
+configure_file("../extra/Exo2-Medium.ttf" "${CMAKE_CURRENT_BINARY_DIR}/extra/Exo2-Medium.ttf" COPYONLY)
+
