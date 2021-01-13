@@ -30,16 +30,12 @@ set (DX11_LINKS
   Shcore.lib
 )
 
-foreach (subproject downloader)
-  add_executable(${subproject} ${subproject}/${subproject}.cpp ${ZSTD_SOURCE})
-  target_compile_features(${subproject} INTERFACE cxx_std_11)
-endforeach() 
+add_executable(downloader downloader/downloader.cpp ${ZSTD_SOURCE})
+target_compile_features(downloader INTERFACE cxx_std_17)
 
-foreach (subproject default)
-  add_executable(${subproject} ${subproject}/${subproject}.cpp ${IMGUI_SOURCE} ${ZSTD_SOURCE})
-  target_compile_features(${subproject} INTERFACE cxx_std_17)
-endforeach() 
-target_link_libraries(default ${DX11_LINKS})
+add_executable(nutrition nutrition/main.cpp ${IMGUI_SOURCE} ${ZSTD_SOURCE})
+target_compile_features(nutrition INTERFACE cxx_std_17)
+target_link_libraries(nutrition ${DX11_LINKS})
 
 configure_file("../extra/Exo2-Medium.ttf" "${CMAKE_CURRENT_BINARY_DIR}/extra/Exo2-Medium.ttf" COPYONLY)
 
