@@ -1,5 +1,5 @@
-cmake_minimum_required (VERSION 3.1)
-project("templateproject")
+cmake_minimum_required (VERSION 3.5)
+project("nutrition")
 
 if(MSVC)
    string(REGEX REPLACE " /W[0-4]" "" CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
@@ -11,15 +11,13 @@ else()
    endif()
 endif()
 
-# Setup as header-only library for parent cmake project
+add_compile_definitions(PROJECT_SOURCE_DIR="\"\"${PROJECT_SOURCE_DIR}\"\"")
+
 set (CMAKE_CXX_STANDARD 11)
 include_directories(${PROJECT_SOURCE_DIR}/include)
 include_directories(${PROJECT_SOURCE_DIR}/ext)
+#include_directories(${PROJECT_SOURCE_DIR}/ext/brotli/include)
+include_directories(${PROJECT_SOURCE_DIR}/ext/zstd)
+include_directories(${PROJECT_SOURCE_DIR}/ext/zstd/common)
 add_subdirectory(src)
 
-# Only include tests, if there is no parent cmake project
-get_directory_property(hasParent PARENT_DIRECTORY)
-if(NOT hasParent)
-  add_subdirectory(test)
-endif()
- 

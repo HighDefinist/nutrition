@@ -4,27 +4,37 @@
       "name": "x64-Debug",
       "generator": "Ninja",
       "configurationType": "Debug",
-      "inheritEnvironments": [
-        "msvc_x64_x64"
-      ],
-      "buildRoot": "${env.USERPROFILE}\\CMakeBuilds\\${workspaceHash}\\build\\${name}",
-      "installRoot": "${env.USERPROFILE}\\CMakeBuilds\\${workspaceHash}\\install\\${name}",
+      "buildRoot": "${env.CommonCMakeTarget}\\vsbuild\\${workspaceHash}\\${name}",
+      "installRoot": "${env.CommonCMakeTarget}\\vsinstall\\${workspaceHash}\\${name}",
       "cmakeCommandArgs": "",
       "buildCommandArgs": "-v",
-      "ctestCommandArgs": ""
+      "ctestCommandArgs": "",
+      "inheritEnvironments": [ "msvc_x64_x64" ],
+      "variables": []
     },
     {
       "name": "x64-Release",
       "generator": "Ninja",
       "configurationType": "RelWithDebInfo",
-      "inheritEnvironments": [
-        "msvc_x64_x64"
-      ],
-      "buildRoot": "${env.USERPROFILE}\\CMakeBuilds\\${workspaceHash}\\build\\${name}",
-      "installRoot": "${env.USERPROFILE}\\CMakeBuilds\\${workspaceHash}\\install\\${name}",
+      "buildRoot": "${env.CommonCMakeTarget}\\vsbuild\\${workspaceHash}\\${name}",
+      "installRoot": "${env.CommonCMakeTarget}\\vsinstall\\${workspaceHash}\\${name}",
       "cmakeCommandArgs": "",
       "buildCommandArgs": "-v",
-      "ctestCommandArgs": ""
+      "ctestCommandArgs": "",
+      "inheritEnvironments": [ "msvc_x64_x64" ],
+      "variables": []
+    },
+    {
+      "name": "Clang-Debug",
+      "generator": "Ninja",
+      "configurationType": "Debug",
+      "buildRoot": "${env.CommonCMakeTarget}\\vsbuild\\${workspaceHash}\\${name}",
+      "installRoot": "${env.CommonCMakeTarget}\\vsinstall\\${workspaceHash}\\${name}",
+      "cmakeCommandArgs": "",
+      "buildCommandArgs": "-v",
+      "ctestCommandArgs": "",
+      "inheritEnvironments": [ "clang_cl_x64" ],
+      "variables": []
     }
   ]
 }
