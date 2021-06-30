@@ -14,7 +14,7 @@
 
 You can download the latest version of *nutrition* by cloning the GitHub repository:
 
-	git clone https://github.com/HighDefinist/templateproject.git
+	git clone https://github.com/HighDefinist/nutrition.git
 	
 ### Usage
 
