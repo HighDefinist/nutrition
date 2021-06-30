@@ -19,21 +19,7 @@ using namespace std::mz;
 using namespace aria::csv;
 using namespace rapidjson;
 
-// Next: An executable, which turns all csv-downloads into a single JSON file
-
-
-/*
-
-Sources: Probably, its best to just download csv's of all food. This can be done on this website:
-https://ndb.nal.usda.gov/ndb/foods/show/18064?fgcd=&manu=&format=&count=&max=25&offset=&sort=default&order=asc&qlookup=bread&ds=SR&qt=&qp=&qa=&qn=&q=&ing=
-
-More specifically:
-https://ndb.nal.usda.gov/ndb/foods/show/18064?format=Abridged&reportfmt=csv&Qv=1
-
-The IDs can be grabbed from the "FOOD_DES.txt" file in that SR-download. Overall, there are just 7793 entries, so a simple script should easily be able to grab all files from the website.
-These csv-files seem to have a non-regular format, but perhaps the csv-reader will be able to handle it anyway.
-The next conversion/processing steps have yet to be determined, but ultimately, it should converge towards something
-*/
+// This executable used to download data from the USDA database, to convert them to JSON. However, it no longer works, because the USDA API has changed, and this downloader has not been updated.
 
 #pragma comment(lib, "WinINet.lib")
 
@@ -126,6 +112,9 @@ int ConvertCSVToJSON(vector<tuple<string, string>> vID) {
 }
 
 int main() {
+  yprintf("This downloader has not been updated, and no longer works."\n);
+  return 0;
+
   auto vID = ExtractIDsAndNames();
   //DownloadSRAbridged(vID);
 
